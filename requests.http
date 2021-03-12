@@ -2,7 +2,7 @@
 POST {{registrationUrl}}/registration
 Content-Type: application/json
 
-{"name": "Sally"}
+{"name": "Rodger"}
 
 ### Get user
 GET {{registrationUrl}}/users/USER-ID
@@ -14,7 +14,8 @@ GET {{registrationUrl}}/accounts?ownerId=USER-ID
 POST {{registrationUrl}}/projects
 Content-Type: application/json
 
-{"name": "Basket Weaving III", "accountId": ACCOUNT-ID}
+{"name": "Project A", "accountId": ACCOUNT-ID}
+{"name": "Project B", "accountId": ACCOUNT-ID}
 
 ### Get projects
 GET {{registrationUrl}}/projects?accountId=ACCOUNT-ID

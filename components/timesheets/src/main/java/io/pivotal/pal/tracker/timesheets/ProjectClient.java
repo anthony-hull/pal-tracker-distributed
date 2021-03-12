@@ -1,5 +1,6 @@
 package io.pivotal.pal.tracker.timesheets;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.web.client.RestOperations;
 
 public class ProjectClient {
@@ -12,6 +13,7 @@ public class ProjectClient {
         this.endpoint = registrationServerEndpoint;
     }
 
+    @CircuitBreaker(name = "project", fallbackMethod = "getProjectFromCache")
     public ProjectInfo getProject(long projectId) {
         return restOperations.getForObject(endpoint + "/projects/" + projectId, ProjectInfo.class);
     }
